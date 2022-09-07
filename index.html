@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trending BTS</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+            body {
+                background-color: whitesmoke;
+            }
+
+            #wrapper {
+                color: rgb(48, 46, 46);
+                font-family: 'Open Sans', sans-serif;
+                width: 100%;
+                margin: auto;     
+            }
+            
+            .header {
+                color: darkgoldenrod;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                background-color: rgb(48, 46, 46);
+                height: 76px;
+                display: block;
+                padding-left: 10px;
+            }
+         
+            .header h2 {
+                font-family: 'Open Sans', sans-serif;
+                position: relative;
+                margin-top: 18px;
+                margin-left: 10px;
+            }
+            
+            .navbar {
+                overflow: hidden;
+                background-color: rgb(55, 95, 107);
+            }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .navbar a:hover {
+                background-color: rgb(48, 46, 46);
+            
+            }
+
+            input[type=text] {
+                width: 100%;
+                padding: 12px;
+                border: 1px soild lightgray;
+                border-radius: 4px;
+                resize: vertical;
+            }
+
+            label {
+                padding: 12px 12px 12px 0;
+                display: inline-block;
+            }
+
+            input[type=submit] {
+                background-color: rgb(55, 95, 107);
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                float: right;
+            }
+            
+            input[type=submit]:hover {
+                background-color: darkgoldenrod;
+            }
+
+            .container {
+                border-radius: 5px;
+                background-color: whitesmoke;
+                padding: 20px;
+                padding-bottom: 90px;
+            }
+
+            .col25 {
+                width: 25%;
+                margin-top: 6px;
+                float: left;
+            }
+
+            .col50 {
+                width: 50%;
+                margin-top: 6px;
+                float: left;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            @media screen and (max-width: 600px) {
+                .col25, .col75, input[type=submit] {
+                    width: 100%;
+                    margin-top: 0;
+                }               
+            }
+            #footer {
+                padding-top: 5px;
+                padding-left: 10px;
+                color: white;
+                background-color: rgb(48, 46, 46);
+                height: 76px;
+            }
+
+            .link { color: darkgoldenrod;}
+            
+            .error {
+               color: red;
+               font-size: 85%;
+            }
+        </style>
+
+        <script>
+            function validateForm() {
+                let x = document.forms["myForm"]["fname"].value;
+                let length = x.length;
+                let err = document.getElementById('err');
+                if (x=="") {
+                    err.innerHTML = "*missing field";
+                    fname.className = 'error';
+                    err.className = 'error';
+                    return false;
+                } 
+                else if (length>20 || length<1) {
+                    err.innerHTML = "*incorrect number of characters";
+                    fname.className = 'error';
+                    err.className = 'error';
+                    return false;
+                }
+                let y = document.forms["myForm"]["lname"].value;
+                let len = y.length;
+                let err1 = document.getElementById('err1');
+                if (y=="") {
+                    err1.innerHTML = "*missing field";
+                    lname.className = 'error';
+                    err1.className = 'error';
+                    return false;
+                }
+                else if (len>20 || len<1) {
+                    err1.innerHTML = "*incorrect number of characters";
+                    lname.className = 'error';
+                    err1.className = 'error';
+                    return false;
+                }
+                let ageVal = document.forms["myForm"]["age"].value;
+                let err2 = document.getElementById('err2');
+                if(ageVal=="") {
+                    err2.innerHTML = '*missing field';
+                    age.className = 'error';
+                    err2.className = 'error';
+                    return false;
+                } else if (ageVal<1 || ageVal>99){
+                    err2.innerHTML = '*age must between 1 and 99 years old';
+                    age.className = 'error';
+                    err2.className = 'error'; 
+                    return false;    
+                } else if (isNaN (ageVal)) {
+                    err2.innerHTML = '*must be numeric';
+                    age.className = 'error';
+                    err2.className = 'error';
+                    return false;
+                } 
+                let numVal = document.forms["myForm"]["num"].value;
+                let err3 = document.getElementById('err3');
+                if(numVal=="") {
+                    err3.innerHTML = '*missing field';
+                    num.className = 'error';
+                    err3.className = 'error';
+                    return false;
+                } else if (isNaN (numVal)) {
+                    err3.innerHTML = '*must be numeric';
+                    num.className = 'error';
+                    err3.className = 'error';
+                    return false;
+                } 
+                let z = document.forms["myForm"]["email"].value;
+                let err4 = document.getElementById('err4');
+                if (z=="") {
+                    err4.innerHTML = "*missing field";
+                    email.className = 'error';
+                    err4.className = 'error';
+                    return false;
+                }
+                var userEmail = document.myForm.email.value;
+                var atposition=userEmail.indexOf("@");  
+                var dotposition=userEmail.lastIndexOf(".");
+                if(atposition<1 || dotposition<atposition+2 || dotposition+2>=userEmail.length) {
+                    err4.innerHTML = "*invalid email address";
+                    email.className = 'error';
+                    err4.className = 'error';
+                    return false;
+                }
+                var checkedYes = document.getElementById('yes').checked;
+                var checkedNo = document.getElementById('no').checked;
+                let err5 = document.getElementById('err5');
+                if (checkedYes == false && checkedNo == false) {
+                    err5.innerHTML = "*missing field";
+                    err5.className = 'error';
+                    return false;
+                }
+                var checkedGoogle = document.getElementById('google').checked;
+                var checkedBing = document.getElementById('bing').checked;
+                var checkedAds = document.getElementById('ad').checked;
+                var checkedMedia = document.getElementById('social media').checked;
+                var checkedFriend = document.getElementById('friend').checked;
+                var checkedOther = document.getElementById('other').checked;
+                let err6 = document.getElementById('err6');
+                if (checkedGoogle == false && checkedBing == false && checkedAds == false && checkedMedia == false
+                && checkedFriend == false && checkedOther== false) {
+                    err6.innerHTML = "*missing field";
+                    err6.className = 'error';
+                    return false;
+                }  
+                var checkedConditions = document.getElementById("conditions").checked;
+                let err7 = document.getElementById("err7");
+                if (checkedConditions == false) {
+                    err7.innerHTML = "*you must accept the terms & conditions" ;
+                    err7.className = 'error';
+                    return false;
+                } 
+            }
+
+      
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <h1>BTS</h1>
+            </div> 
+
+            <div class="navbar">
+                <a href="#Home" style="size: 25px;">Home</a>
+                <a href="#About">About</a>
+                <a href="#Newsletter">Newsletter</a>
+                <a href="#Contact">Contact</a>
+                </ul>
+            </div><br>
+
+            <h2 style="text-align: center;">Sign Up To Our Newsletter Today!</h2><br> 
+                <p style="padding-left: 10px;"><i>Please fill in this form to subscribe to our newsletter.</i></p><br>
+            
+            <div class="container">   
+            <form name="myForm" action="mailto: aahmedfathyabdelrehim01@qub.ac.uk" method="post" onsubmit="return validateForm()">
+                <div class="row">
+                    <div class="col25">
+                        <label for="fname"><b>First name</b></label>
+                    </div>
+                    <div class="col50">    
+                        <input type="text" placeholder="Enter First Name" name="fname" id="fname">
+                    </div>
+                </div>
+                <span id="err"></span>
+                <div class="row">
+                    <div class="col25">
+                        <label for="lname"><b>Last name</b></label>
+                    </div>
+                    <div class="col50">
+                        <input type="text" placeholder="Enter Last Name" name="lname" id="lname">
+                    </div>
+                </div>
+                <span id="err1"></span>
+                <div class="row">
+                    <div class="col25">
+                        <label for="age"><b>Age:</b></label>
+                    </div>
+                    <div class="col50">
+                        <input type="text" placeholder="Enter Age" name="age" id="age">
+                    </div>
+                </div>
+                <span id="err2"></span>
+                <div class="row">
+                    <div class="col25">
+                        <label for="num"><b>Phone Number:</b></label>
+                    </div>
+                    <div class="col50">
+                        <input type="text" placeholder="Enter Phone Number" name="number" id="num">
+                    </div>
+                </div>
+                <span id="err3"></span>
+                <div class="row">
+                    <div class="col25">
+                        <label for="email"><b>Email:</b></label>
+                    </div>
+                    <div class="col50">
+                        <input type="text" placeholder="Enter Email" name="email" id="email">
+                    </div>
+                </div>
+                <span id="err4"></span>
+                <div class="row">
+                    <div class="col25">
+                        <p><b>Would you like to receive additional offers and promomotions:</b></p>
+                    </div>
+                    <div class="col50">
+                        <input type="radio" id="yes" name="extra" value="Yes">
+                        <label for="yes">Yes</label>
+                        <br>
+                        <input type="radio" id="no" name="extra" value="No">
+                        <label for="no">No</label>
+                    </div>
+                </div> 
+                <span id="err5"></span>  
+                <div class="row">
+                    <div class="col25">
+                        <p><b>How did you hear about us?</b></p>
+                    </div>
+                    <div class="col50">
+                        <br>
+                        <input type="radio" id="google" name="info" value="Google">
+                        <label for="google">Google</label>
+                        <br> 
+                        <input type="radio" id="bing" name="info" value="Bing">
+                        <label for="bing">Bing</label>
+                        <br> 
+                        <input type="radio" id="ad" name="info" value="Ad">
+                        <label for="ad">Ads</label>
+                        <br> 
+                        <input type="radio" id="social media" name="info" value="social">
+                        <label for="social">Social media</label>
+                        <br> 
+                        <input type="radio" id="friend" name="info" value="friend">
+                        <label for="friend">From a friend/ relative</label>
+                        <br>
+                        <input type="radio" id="other" name="info" value="other">
+                        <label for="other">Other</label><br>
+                    </div>
+                </div>
+                <span id="err6"></span> 
+                <div class="row"><br>
+                    <div class="col50">
+                        <input type="checkbox" id="conditions" name="conditions" value="conditions">
+                        <label for="conditions" style="font-size: small;">By signing up, you agree to BTS's terms & conditions</label>
+                    </div>
+                </div>
+                <span id="err7"></span> 
+                <div class="row">
+                    <input type="submit" value="Subscribe">
+                </div>
+            </form>
+            </div>
+                  
+            <div id="footer">
+                <h5>Contact Us:</h5>
+                <ul>
+                    <li><a class="link" href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a class="link" href="https://www.twitter.com/">Twitter</a></li>
+                    <li><a class="link" href="https://www.facebook.com/">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
