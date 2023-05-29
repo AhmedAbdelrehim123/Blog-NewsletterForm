@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trending BTS</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+            body {
+                background-color: whitesmoke;
+            }
+
+            #wrapper {
+                color: rgb(48, 46, 46);
+                font-family: 'Open Sans', sans-serif;
+                width: 100%;
+                margin: auto;     
+            }
+            
+            .header {
+                color: darkgoldenrod;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                background-color: rgb(48, 46, 46);
+                height: 76px;
+                display: block;
+                padding-left: 10px;
+            }
+         
+            .header h2 {
+                font-family: 'Open Sans', sans-serif;
+                position: relative;
+                margin-top: 18px;
+                margin-left: 10px;
+            }
+            
+            .navbar {
+                overflow: hidden;
+                background-color: rgb(55, 95, 107);
+            }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .navbar a:hover {
+                background-color: rgb(48, 46, 46);
+            
+            }
+
+            @media screen and (max-width: 300px) {
+                .navbar a {
+                    width: 100%;
+                }
+            } 
+
+            #intro {
+                margin-left: 20px;
+                width: 95%;
+                border: 1px solid rgb(55, 95, 107);
+                padding: 10px;
+                box-shadow: 2px 3px  rgb(48, 46, 46);
+            }
+
+            p {
+                font-size: large;
+            }
+
+            .col {
+                float:left;
+                width: 33.33%;
+                padding: 15px;
+                padding-top: 0px;
+                
+            }
+
+            .row:after {
+                content:  "";
+                display: table;
+                clear: both;
+            }
+
+            @media screen and (max-width:600px) {
+                .col {
+                    width: 100%;
+                }
+                #intro {
+                    margin-left: 0px;
+                }
+            }
+
+            img {
+                padding: 1px;
+                width: 100%;
+
+            }
+
+            .card {
+                background-color: lightgrey;
+                padding: 20px;
+                margin-top: 20px;
+                height: 50%;
+            }
+
+            .size {
+                width: 35px;
+                height: auto;
+            }
+
+            .size {
+                width: 45px;
+                height: auto;
+            }
+
+            .size:hover {
+                opacity: 0.6;
+            }
+            
+            #footer {
+                padding-left: 10px;
+                color: white;
+                background-color: rgb(48, 46, 46);
+                height: 70px;
+                
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header">
+                <h1>BTS</h1>
+            </div> 
+
+            <div class="navbar">
+                <a href="Ahmed_Abdelrehim_Task2_40352504.html" style="size: 25px;">Home</a>
+                <a href="#About">About</a>
+                <a href="#Newsletter">Newsletter</a>
+                <a href="BTS-newsletter-signup.html">Contact</a>
+                </ul>
+            </div><br>
+
+            <div id="intro">
+                <h2 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Behind the Scenes</h2><br>
+                <p>On this week's Behind the Scenes, we introduce another new person where they get to showcase their different interests on our webpage. If you would like to get a chance to feature in the future, you can fill in the
+                    form in the Contact page. The upcoming person is a first year student at Queens University Belfast who's name is Ahmed Abdelrehim, an international student originating from Cairo, Egypt</p>
+                        
+            </div>        
+
+            <div class="row">
+                <div class="col">
+                    <div class="card"> 
+                        <h3>Early Life</h3><br>
+                        <div><img src="Images/egypt.jpg" alt="Egypt"></div><br>
+                        <p>My life journey began when I was born in Cairo on 13th March 2004, the second child in my family. After a few years have passed, my family decided
+                            to move to the new and upcoming city at that time: Dubai.</p><br>
+                            <div><img src="Images/dubai.jpg" alt="Dubai"></div><br>    
+                        <p>Moving to a totally different country was tough on me as a child, as at the beginning I struggled to make new friends, but eventually became more social and 
+                            open to connect with new people.
+                        </p>    
+                    </div>
+                </div>
+                        
+                <div class="col">
+                    <div class="card">
+                        <h3>Sports</h3><br>
+                        <div><img src="Images/dubai2.jpg" alt="Dubai"></div><br>
+                        <p>From my earliest memories in Dubai to my latest, I consider Dubai as my home city. Developing throughout my youth life I expanded my knowledge vastly and learnt
+                            to build my character. It all kicked off when my dad would teach me some basics of football at the age of 9, later this resulted into me falling in love with the sport.
+                            A year later, my dad realised that I should persue my favorite sport in a more competitive manner, registering me at the Spanish Youth Football Academy in Dubai.
+                           </p><br>
+                           <div><img src="Images/sports.jpg" alt="Football"></div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card">
+                        <h3>History</h3><br>
+                        <p>Over the next few years, I was learning the basics of Ancient Egyptians and their various mythical gods, since I am originally from Egypt this spectacular ancient civlization 
+                            that existed throughout history stood out in my eyes. This was due to their ahead of time architecture and their unique designs, even some claims arised that the famous Pyramids
+                            of Giza could not be made by human beings at that time and that the Ancient Egyptians might have gained some help from extraterrestrial civilizations.</p>
+                            <div><img src="Images/ancient.jpg" alt="History"></div>
+                            <div><img src="Images/ancient1.jpg" alt="History"></div>
+                    </div>
+                </div> 
+
+                <div class="col">
+                    <div class="card">
+                        <h3>Travel</h3><br>
+                        <div><img src="Images/alps.jpg" alt="Travel"></div>
+                        <p>There are many touristing areas around the globe, but one specifically that I prefer would be the French Alps. Looking over at the breath-taking views of the mountains all around is simply 
+                            a once in a lifetime experience. Riding in a cable car through the Alps is a surreal moment that could only be described as perfection.</p>
+                    </div>
+                </div> 
+                
+                <div class="col">
+                    <div class="card">
+                        <h3>Interests</h3><br>
+                        <p>In addition, I enjoy gaming and watching tv shows. Usually I play fast-paced multiplayer shooter games, one of my top picks is a game called
+                            Rainbow Six Siege. As for tv shows, I love watching drama, action, and thriller shows such as Lucifier and Suits.</p><br>
+                        <div><img src="Images/gaming.jpg" alt="Gaming"></div>
+                    </div>
+                </div>   
+                
+                <div class="col">
+                    <div class="card">
+                        <h3>Follow Me</h3><br>
+                            <a href="https://www.instagram.com/ahmedfathyeid/"><img src="images/instagram.png" class="size"></a>
+                            <a href="https://twitter.com/ahmedfathyeid2"><img src="images/twitter.png" class="size"></a>
+                            <a href="https://www.facebook.com/profile.php?id=100013122845011"><img src="images/facebook.png" class="size"></a>
+                    </div>
+                </div>  
+ 
+            </div> 
+            <div id="footer">
+                <h5>Contact Us:</h5>
+                <ul>
+                    <a href="https://www.instagram.com/"><img src="images/instagram.png" class="size"></a>
+                    <a href="https://www.twitter.com/"><img src="images/twitter.png" class="size"></a>
+                    <a href="https://www.facebook.com/"><img src="images/facebook.png" class="size"></a> 
+                </ul>
+            </div>
+        </div>
+    </body>
+
+</html>
